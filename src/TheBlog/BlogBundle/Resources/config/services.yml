@@ -1,0 +1,6 @@
+services:
+  the_blog_blog.incremente_vue_listener:
+    class: TheBlog\BlogBundle\EventListener\IncrementeVueListener
+    arguments: [@doctrine.orm.entity_manager, @service_container]
+    tags:
+      - { name: kernel.event_listener, event: theblog.eventlistener.page_load, method: onPageLoad }
