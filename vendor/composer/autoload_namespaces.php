@@ -10,6 +10,7 @@ return array(
     'Stfalcon\\Bundle\\TinymceBundle' => array($vendorDir . '/stfalcon/tinymce-bundle'),
     'SensioLabs\\Security' => array($vendorDir . '/sensiolabs/security-checker'),
     'Knp\\Snappy' => array($vendorDir . '/knplabs/knp-snappy/src'),
+    'JsonpCallbackValidator' => array($vendorDir . '/willdurand/jsonp-callback-validator/src'),
     'Genemu\\Bundle\\FormBundle' => array($vendorDir . '/genemu/form-bundle'),
     'Doctrine\\ORM\\' => array($vendorDir . '/doctrine/orm/lib'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
@@ -18,5 +19,7 @@ return array(
     'Doctrine\\Common\\DataFixtures' => array($vendorDir . '/doctrine/data-fixtures/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
+    'Buzz' => array($vendorDir . '/kriswallsmith/buzz/lib'),
+    'Bmatzner\\FontAwesomeBundle' => array($vendorDir . '/bmatzner/fontawesome-bundle'),
     'Assetic' => array($vendorDir . '/kriswallsmith/assetic/src'),
 );

@@ -62,9 +62,14 @@ class ComposerStaticInita3da92f24d22667e9a0f57d8ceebf17b
         array (
             'Incenteev\\ParameterHandler\\' => 27,
         ),
+        'H' => 
+        array (
+            'HWI\\Bundle\\OAuthBundle\\' => 23,
+        ),
         'F' => 
         array (
             'FOS\\UserBundle\\' => 15,
+            'FOS\\JsRoutingBundle\\' => 20,
         ),
         'D' => 
         array (
@@ -178,9 +183,17 @@ class ComposerStaticInita3da92f24d22667e9a0f57d8ceebf17b
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
         ),
+        'HWI\\Bundle\\OAuthBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hwi/oauth-bundle',
+        ),
         'FOS\\UserBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
+        ),
+        'FOS\\JsRoutingBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/jsrouting-bundle',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -238,6 +251,13 @@ class ComposerStaticInita3da92f24d22667e9a0f57d8ceebf17b
                 0 => __DIR__ . '/..' . '/knplabs/knp-snappy/src',
             ),
         ),
+        'J' => 
+        array (
+            'JsonpCallbackValidator' => 
+            array (
+                0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
+            ),
+        ),
         'G' => 
         array (
             'Genemu\\Bundle\\FormBundle' => 
@@ -274,6 +294,17 @@ class ComposerStaticInita3da92f24d22667e9a0f57d8ceebf17b
             'Doctrine\\Common\\Annotations\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
+            ),
+        ),
+        'B' => 
+        array (
+            'Buzz' => 
+            array (
+                0 => __DIR__ . '/..' . '/kriswallsmith/buzz/lib',
+            ),
+            'Bmatzner\\FontAwesomeBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/bmatzner/fontawesome-bundle',
             ),
         ),
         'A' => 
