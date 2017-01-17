@@ -24,7 +24,10 @@
         "stfalcon/tinymce-bundle": "1.0",
         "knplabs/knp-snappy-bundle": "~1.4",
         "h4cc/wkhtmltopdf-amd64": "0.12.3",
-        "genemu/form-bundle": "^3.0@dev"
+        "genemu/form-bundle": "^3.0@dev",
+        "hwi/oauth-bundle": "0.4.*@dev",
+        "bmatzner/fontawesome-bundle": "~4.7",
+        "friendsofsymfony/jsrouting-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

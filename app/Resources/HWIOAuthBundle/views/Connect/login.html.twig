@@ -5,6 +5,6 @@
         <span>{{ error }}</span>
     {% endif %}
     {% for owner in hwi_oauth_resource_owners() %}
-    <a href="{{ hwi_oauth_login_url(owner) }}" class="btn btn-block btn-facebook"><span class="fa fa-facebook"></span>Connection avec Facebook</a>
+    <a href="{{ hwi_oauth_login_url(owner) }}" class="btn btn-primary btn-facebook"><span class="fa fa-facebook"></span> Connection avec Facebook</a>
     {% endfor %}
 {% endblock hwi_oauth_content %}

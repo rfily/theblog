@@ -5,14 +5,20 @@ admin_admin_homepage:
 admin_admin_ajoutcategorie:
     path:     /admin/ajout_categorie
     defaults: { _controller: AdminAdminBundle:AdminCategorie:ajouter}
+    options:
+        expose: true
 
 admin_admin_ajoutarticle:
     path:     /admin/ajout_article
     defaults: { _controller: AdminAdminBundle:AdminArticle:ajouter}
+    options:
+        expose: true
 
 admin_admin_modifiercategorie:
     path:     /admin/modif_categorie/{id}
     defaults: { _controller: AdminAdminBundle:AdminCategorie:editer}
+    options:
+        expose: true
 
 admin_admin_supprimercategorie:
     path:     /admin/suppr_categorie/{id}
@@ -25,7 +31,25 @@ admin_admin_supprimerarticle:
 admin_admin_modifierarticle:
     path:     /admin/modif_article/{id}
     defaults: { _controller: AdminAdminBundle:AdminArticle:editer}
+    options:
+        expose: true
 
 admin_admin_categorie:
     path:     /admin/liste_categorie
     defaults: { _controller: AdminAdminBundle:AdminCategorie:index }
+
+admin_admin_page:
+    path:     /admin/liste_page
+    defaults: { _controller: AdminAdminBundle:AdminPage:index }
+
+admin_admin_ajoutpage:
+    path:     /admin/ajout_page
+    defaults: { _controller: AdminAdminBundle:AdminPage:ajouter}
+    options:
+        expose: true
+
+admin_admin_doajoutpage:
+    path:     /admin/do_ajout_page
+    defaults: { _controller: AdminAdminBundle:AdminPage:doAjouter}
+    options:
+        expose: true

@@ -18,12 +18,16 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new TheBlog\BlogBundle\TheBlogBlogBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Utilisateurs\UtilisateurBundle\UtilisateursUtilisateurBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Admin\AdminBundle\AdminAdminBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
-            new Genemu\Bundle\FormBundle\GenemuFormBundle()
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new Bmatzner\FontAwesomeBundle\BmatznerFontAwesomeBundle(),
+            new Common\CommonBundle\CommonCommonBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

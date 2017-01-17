@@ -18,6 +18,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="TheBlogBlogBundle">TheBlog\BlogBundle\TheBlogBlogBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</parameter>
       <parameter key="UtilisateursUtilisateurBundle">Utilisateurs\UtilisateurBundle\UtilisateursUtilisateurBundle</parameter>
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="AdminAdminBundle">Admin\AdminBundle\AdminAdminBundle</parameter>
@@ -26,6 +27,7 @@
       <parameter key="GenemuFormBundle">Genemu\Bundle\FormBundle\GenemuFormBundle</parameter>
       <parameter key="HWIOAuthBundle">HWI\Bundle\OAuthBundle\HWIOAuthBundle</parameter>
       <parameter key="BmatznerFontAwesomeBundle">Bmatzner\FontAwesomeBundle\BmatznerFontAwesomeBundle</parameter>
+      <parameter key="CommonCommonBundle">Common\CommonBundle\CommonCommonBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -47,7 +49,7 @@
     <parameter key="oauth.facebook.id">311150865951713</parameter>
     <parameter key="oauth.facebook.secret">1ce06e81fa5d682aacc639240e184616</parameter>
     <parameter key="utilisateurs.user_provider.class">Utilisateurs\UtilisateurBundle\UserProvider</parameter>
-    <parameter key="locale">en</parameter>
+    <parameter key="locale">fr</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -100,7 +102,7 @@
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.trusted_proxies" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">fr</parameter>
     <parameter key="session.class">Symfony\Component\HttpFoundation\Session\Session</parameter>
     <parameter key="session.flashbag.class">Symfony\Component\HttpFoundation\Session\Flash\FlashBag</parameter>
     <parameter key="session.attribute_bag.class">Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag</parameter>
@@ -577,6 +579,14 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="fos_js_routing.extractor.class">FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor</parameter>
+    <parameter key="fos_js_routing.controller.class">FOS\JsRoutingBundle\Controller\Controller</parameter>
+    <parameter key="fos_js_routing.normalizer.route_collection.class">FOS\JsRoutingBundle\Serializer\Normalizer\RouteCollectionNormalizer</parameter>
+    <parameter key="fos_js_routing.normalizer.routes_response.class">FOS\JsRoutingBundle\Serializer\Normalizer\RoutesResponseNormalizer</parameter>
+    <parameter key="fos_js_routing.denormalizer.route_collection.class">FOS\JsRoutingBundle\Serializer\Denormalizer\RouteCollectionDenormalizer</parameter>
+    <parameter key="fos_js_routing.cache_control" type="collection">
+      <parameter key="enabled">false</parameter>
+    </parameter>
     <parameter key="assetic.asset_factory.class">Symfony\Bundle\AsseticBundle\Factory\AssetFactory</parameter>
     <parameter key="assetic.asset_manager.class">Assetic\Factory\LazyAssetManager</parameter>
     <parameter key="assetic.asset_manager_cache_warmer.class">Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer</parameter>
@@ -603,6 +613,7 @@
       <parameter>AppBundle</parameter>
       <parameter>TheBlogBlogBundle</parameter>
       <parameter>FOSUserBundle</parameter>
+      <parameter>FOSJsRoutingBundle</parameter>
       <parameter>UtilisateursUtilisateurBundle</parameter>
       <parameter>AsseticBundle</parameter>
       <parameter>AdminAdminBundle</parameter>
@@ -611,6 +622,7 @@
       <parameter>GenemuFormBundle</parameter>
       <parameter>HWIOAuthBundle</parameter>
       <parameter>BmatznerFontAwesomeBundle</parameter>
+      <parameter>CommonCommonBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
@@ -629,7 +641,7 @@
     <parameter key="assetic.write_to">C:\wamp\www\theblog\app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">C:\Windows\system32\java.EXE</parameter>
-    <parameter key="assetic.node.bin">C:\Program Files\nodejs\\node.EXE</parameter>
+    <parameter key="assetic.node.bin">C:\Program Files\nodejs\node.EXE</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
@@ -909,7 +921,7 @@
     <service id="locale_listener" class="Symfony\Component\HttpKernel\EventListener\LocaleListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="service" id="router" on-invalid="ignore"/>
     </service>
     <service id="translator_listener" class="Symfony\Component\HttpKernel\EventListener\TranslatorListener">
@@ -2576,7 +2588,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>585d0ec7969f15.17538258</argument>
+            <argument>587cc20952e257.23311503</argument>
           </service>
         </argument>
       </argument>
@@ -2916,7 +2928,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>585d0ec7969f15.17538258</argument>
+            <argument>587cc20952e257.23311503</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3172,6 +3184,7 @@
               <argument>AppBundle</argument>
               <argument>TheBlogBlogBundle</argument>
               <argument>FOSUserBundle</argument>
+              <argument>FOSJsRoutingBundle</argument>
               <argument>UtilisateursUtilisateurBundle</argument>
               <argument>AsseticBundle</argument>
               <argument>AdminAdminBundle</argument>
@@ -3180,6 +3193,7 @@
               <argument>GenemuFormBundle</argument>
               <argument>HWIOAuthBundle</argument>
               <argument>BmatznerFontAwesomeBundle</argument>
+              <argument>CommonCommonBundle</argument>
               <argument>DebugBundle</argument>
               <argument>WebProfilerBundle</argument>
               <argument>SensioDistributionBundle</argument>
@@ -3431,6 +3445,7 @@
             <argument type="collection">
               <argument key="TheBlogBlogBundle">TheBlog\BlogBundle\Entity</argument>
               <argument key="UtilisateursUtilisateurBundle">Utilisateurs\UtilisateurBundle\Entity</argument>
+              <argument key="AdminAdminBundle">Admin\AdminBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -3452,6 +3467,7 @@
                       <argument type="collection">
                         <argument>C:\wamp\www\theblog\src\TheBlog\BlogBundle\Entity</argument>
                         <argument>C:\wamp\www\theblog\src\Utilisateurs\UtilisateurBundle\Entity</argument>
+                        <argument>C:\wamp\www\theblog\src\Admin\AdminBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -3464,10 +3480,24 @@
                       <argument type="collection">
                         <argument>C:\wamp\www\theblog\src\TheBlog\BlogBundle\Entity</argument>
                         <argument>C:\wamp\www\theblog\src\Utilisateurs\UtilisateurBundle\Entity</argument>
+                        <argument>C:\wamp\www\theblog\src\Admin\AdminBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Utilisateurs\UtilisateurBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\theblog\src\TheBlog\BlogBundle\Entity</argument>
+                        <argument>C:\wamp\www\theblog\src\Utilisateurs\UtilisateurBundle\Entity</argument>
+                        <argument>C:\wamp\www\theblog\src\Admin\AdminBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Admin\AdminBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -3683,6 +3713,64 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="router"/>
       <argument>86400</argument>
+    </service>
+    <service id="fos_js_routing.extractor" class="FOS\JsRoutingBundle\Extractor\ExposedRoutesExtractor">
+      <argument type="service" id="router"/>
+      <argument type="collection"/>
+      <argument>C:\wamp\www\theblog\app\cache\dev</argument>
+      <argument type="collection">
+        <argument key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</argument>
+        <argument key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</argument>
+        <argument key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</argument>
+        <argument key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</argument>
+        <argument key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</argument>
+        <argument key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</argument>
+        <argument key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</argument>
+        <argument key="AppBundle">AppBundle\AppBundle</argument>
+        <argument key="TheBlogBlogBundle">TheBlog\BlogBundle\TheBlogBlogBundle</argument>
+        <argument key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</argument>
+        <argument key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</argument>
+        <argument key="UtilisateursUtilisateurBundle">Utilisateurs\UtilisateurBundle\UtilisateursUtilisateurBundle</argument>
+        <argument key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</argument>
+        <argument key="AdminAdminBundle">Admin\AdminBundle\AdminAdminBundle</argument>
+        <argument key="StfalconTinymceBundle">Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle</argument>
+        <argument key="KnpSnappyBundle">Knp\Bundle\SnappyBundle\KnpSnappyBundle</argument>
+        <argument key="GenemuFormBundle">Genemu\Bundle\FormBundle\GenemuFormBundle</argument>
+        <argument key="HWIOAuthBundle">HWI\Bundle\OAuthBundle\HWIOAuthBundle</argument>
+        <argument key="BmatznerFontAwesomeBundle">Bmatzner\FontAwesomeBundle\BmatznerFontAwesomeBundle</argument>
+        <argument key="CommonCommonBundle">Common\CommonBundle\CommonCommonBundle</argument>
+        <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
+        <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
+        <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
+        <argument key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</argument>
+        <argument key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</argument>
+      </argument>
+    </service>
+    <service id="fos_js_routing.controller" class="FOS\JsRoutingBundle\Controller\Controller">
+      <argument type="service" id="fos_js_routing.serializer"/>
+      <argument type="service" id="fos_js_routing.extractor"/>
+      <argument type="collection">
+        <argument key="enabled">false</argument>
+      </argument>
+      <argument>true</argument>
+    </service>
+    <service id="fos_js_routing.serializer" class="Symfony\Component\Serializer\Serializer">
+      <argument type="collection">
+        <argument type="service">
+          <service class="FOS\JsRoutingBundle\Serializer\Normalizer\RouteCollectionNormalizer" public="false"/>
+        </argument>
+        <argument type="service">
+          <service class="FOS\JsRoutingBundle\Serializer\Normalizer\RoutesResponseNormalizer" public="false"/>
+        </argument>
+        <argument type="service">
+          <service class="FOS\JsRoutingBundle\Serializer\Denormalizer\RouteCollectionDenormalizer" public="false"/>
+        </argument>
+      </argument>
+      <argument type="collection">
+        <argument key="json" type="service">
+          <service class="Symfony\Component\Serializer\Encoder\JsonEncoder" public="false"/>
+        </argument>
+      </argument>
     </service>
     <service id="assetic.filter_manager" class="Symfony\Bundle\AsseticBundle\FilterManager">
       <argument type="service" id="service_container"/>
@@ -3993,6 +4081,33 @@
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
+                  <argument>FOSJsRoutingBundle</argument>
+                  <argument>C:\wamp\www\theblog\app/Resources/FOSJsRoutingBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>FOSJsRoutingBundle</argument>
+                  <argument>C:\wamp\www\theblog\vendor\friendsofsymfony\jsrouting-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
                   <argument>UtilisateursUtilisateurBundle</argument>
                   <argument>C:\wamp\www\theblog\app/Resources/UtilisateursUtilisateurBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
@@ -4192,6 +4307,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>BmatznerFontAwesomeBundle</argument>
                   <argument>C:\wamp\www\theblog\vendor\bmatzner\fontawesome-bundle\Bmatzner\FontAwesomeBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>CommonCommonBundle</argument>
+                  <argument>C:\wamp\www\theblog\app/Resources/CommonCommonBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>CommonCommonBundle</argument>
+                  <argument>C:\wamp\www\theblog\src\Common\CommonBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -4856,9 +4998,6 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
     </service>
     <service id="monolog.logger.translation" class="Symfony\Bridge\Monolog\Logger">
       <argument>translation</argument>
@@ -4867,9 +5006,6 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.templating" class="Symfony\Bridge\Monolog\Logger">
@@ -4880,9 +5016,6 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
     </service>
     <service id="monolog.logger.profiler" class="Symfony\Bridge\Monolog\Logger">
       <argument>profiler</argument>
@@ -4891,9 +5024,6 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.router" class="Symfony\Bridge\Monolog\Logger">
@@ -4904,9 +5034,6 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
     </service>
     <service id="monolog.logger.php" class="Symfony\Bridge\Monolog\Logger">
       <argument>php</argument>
@@ -4916,14 +5043,11 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
     </service>
     <service id="monolog.logger.event" class="Symfony\Bridge\Monolog\Logger">
       <argument>event</argument>
       <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
+        <argument type="service" id="monolog.handler.null_internal"/>
       </call>
     </service>
     <service id="monolog.logger.security" class="Symfony\Bridge\Monolog\Logger">
@@ -4934,17 +5058,11 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
     </service>
     <service id="monolog.logger.doctrine" class="Symfony\Bridge\Monolog\Logger">
       <argument>doctrine</argument>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
     <service id="monolog.logger.assetic" class="Symfony\Bridge\Monolog\Logger">
@@ -4955,9 +5073,6 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
     </service>
     <service id="monolog.logger.snappy" class="Symfony\Bridge\Monolog\Logger">
       <argument>snappy</argument>
@@ -4967,13 +5082,6 @@
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
       </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
-    </service>
-    <service id="monolog.handler.debug" class="Symfony\Bridge\Monolog\Handler\DebugHandler">
-      <argument>100</argument>
-      <argument>true</argument>
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
@@ -5107,6 +5215,10 @@
         <argument>HWIOAuth</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp\www\theblog\src\Common\CommonBundle/Resources/views</argument>
+        <argument>CommonCommon</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp\www\theblog\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -5131,9 +5243,6 @@
       </call>
       <call method="pushHandler">
         <argument type="service" id="monolog.handler.main"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
       </call>
       <autowiring-type>Psr\Log\LoggerInterface</autowiring-type>
     </service>

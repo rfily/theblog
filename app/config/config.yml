@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi:             ~
@@ -85,3 +85,26 @@ knp_snappy:
 
 genemu_form:
     select2: ~
+
+hwi_oauth:
+    connect:
+        account_connector: utilisateurs.user_provider
+    firewall_name: main
+    fosub:
+        username_iterations: 30
+        properties:
+        # these properties will be used/redefined later in the custom FOSUBUserProvider service.
+            facebook: facebook_id
+    resource_owners:
+        facebook:
+            type: facebook
+            client_id: %oauth.facebook.id%
+            client_secret: %oauth.facebook.secret%
+            scope: "email"
+            infos_url: "https://graph.facebook.com/me?fields=id,first_name,last_name,email"
+            paths:
+                email: email
+                firstname: first_name
+                lastname: last_name
+    http_client:
+        verify_peer: false

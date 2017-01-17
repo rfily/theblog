@@ -105,6 +105,15 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // common_common_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'common_common_homepage');
+            }
+
+            return array (  '_controller' => 'Common\\CommonBundle\\Controller\\DefaultController::indexAction',  '_route' => 'common_common_homepage',);
+        }
+
         if (0 === strpos($pathinfo, '/admin')) {
             // admin_admin_homepage
             if ($pathinfo === '/admin/liste_article') {
@@ -147,9 +156,27 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_modifierarticle')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\AdminArticleController::editerAction',));
             }
 
-            // admin_admin_categorie
-            if ($pathinfo === '/admin/liste_categorie') {
-                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\AdminCategorieController::indexAction',  '_route' => 'admin_admin_categorie',);
+            if (0 === strpos($pathinfo, '/admin/liste_')) {
+                // admin_admin_categorie
+                if ($pathinfo === '/admin/liste_categorie') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\AdminCategorieController::indexAction',  '_route' => 'admin_admin_categorie',);
+                }
+
+                // admin_admin_page
+                if ($pathinfo === '/admin/liste_page') {
+                    return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\AdminPageController::indexAction',  '_route' => 'admin_admin_page',);
+                }
+
+            }
+
+            // admin_admin_ajoutpage
+            if ($pathinfo === '/admin/ajout_page') {
+                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\AdminPageController::ajouterAction',  '_route' => 'admin_admin_ajoutpage',);
+            }
+
+            // admin_admin_doajoutpage
+            if ($pathinfo === '/admin/do_ajout_page') {
+                return array (  '_controller' => 'Admin\\AdminBundle\\Controller\\AdminPageController::doAjouterAction',  '_route' => 'admin_admin_doajoutpage',);
             }
 
         }
@@ -423,6 +450,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
         }
+
+        // fos_js_routing_js
+        if (0 === strpos($pathinfo, '/js/routing') && preg_match('#^/js/routing(?:\\.(?P<_format>js|json))?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_fos_js_routing_js;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_js_routing_js')), array (  '_controller' => 'fos_js_routing.controller:indexAction',  '_format' => 'js',));
+        }
+        not_fos_js_routing_js:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

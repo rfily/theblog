@@ -4,13 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/commoncommon/css/style.css') }}" />
     {% block stylesheets %}
         {% stylesheets
-        '@AdminAdminBundle/Resources/public/css/*'
-        filter='cssrewrite'
+        '@CommonCommonBundle/Resources/public/css/*'
+        '@CommonCommonBundle/Resources/public/js/select2/dist/css/select2.css'
+        filter='cssrewrite'  output='css/*.css'
         %}
         <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="all">
         {% endstylesheets %}
+
     {% endblock %}
 
     <!--[if lt IE 9]>
@@ -86,17 +90,20 @@
 {% endif %}
 {% block javascripts %}
     {% javascripts
-    '@AdminAdminBundle/Resources/public/js/jquery-1.11.1.min.js'
-    '@AdminAdminBundle/Resources/public/js/bootstrap.min.js'
-    '@AdminAdminBundle/Resources/public/js/bootstrap-table.js'
-    '@AdminAdminBundle/Resources/public/js/chart.min.js'
-    '@AdminAdminBundle/Resources/public/js/chart-data.js'
-    '@AdminAdminBundle/Resources/public/js/easypiechart.js'
-    '@AdminAdminBundle/Resources/public/js/easypiechart-data.js'
-    '@AdminAdminBundle/Resources/public/js/bootstrap-datepicker.js'
-    '@AdminAdminBundle/Resources/public/js/lumino.glyphs.js'
-    '@AdminAdminBundle/Resources/public/js/respond.min.js'
-    '@AdminAdminBundle/Resources/public/js/html5shiv.min.js'
+    '@CommonCommonBundle/Resources/public/js/jquery-1.11.1.min.js'
+    '@CommonCommonBundle/Resources/public/js/bootstrap.min.js'
+    '@CommonCommonBundle/Resources/public/js/bootstrap-table.js'
+    '@CommonCommonBundle/Resources/public/js/chart.min.js'
+    '@CommonCommonBundle/Resources/public/js/chart-data.js'
+    '@CommonCommonBundle/Resources/public/js/easypiechart.js'
+    '@CommonCommonBundle/Resources/public/js/easypiechart-data.js'
+    '@CommonCommonBundle/Resources/public/js/bootstrap-datepicker.js'
+    '@CommonCommonBundle/Resources/public/js/lumino.glyphs.js'
+    '@CommonCommonBundle/Resources/public/js/respond.min.js'
+    '@CommonCommonBundle/Resources/public/js/html5shiv.min.js'
+    '@CommonCommonBundle/Resources/public/js/select2/dist/js/select2.js'
+    '@CommonCommonBundle/Resources/public/js/Common/Helper.js'
+    '@CommonCommonBundle/Resources/public/js/Page/page.js'
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}

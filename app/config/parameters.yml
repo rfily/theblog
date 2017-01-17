@@ -10,3 +10,5 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt
+    oauth.facebook.id: "311150865951713"
+    oauth.facebook.secret: "1ce06e81fa5d682aacc639240e184616"

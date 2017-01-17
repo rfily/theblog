@@ -1,65 +1,59 @@
-{% extends "AdminAdminBundle::layout.html.twig" %}
-
-{% block title %}
-    Ajout d'Article
+{#% extends "AdminAdminBundle::layout.ajax.html.twig" %#}
+{% block stylesheets %}
+    {% stylesheets
+    'bundles/commoncommon/css/*'
+    filter='cssrewrite'
+    %}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="all">
+    {% endstylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.min.css') }}" />
 {% endblock %}
 
-{% block theblog_body %}
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Ajout d'Article</h1>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+<form method="post" action="{{ path('admin_admin_doajoutpage') }}" class="ajaxForm">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
         </div>
-    </div><!--/.row-->
+        <div class="modal-body">
+            {% if app.session.flashBag.has('info') %}
+                <div class="alert alert-success">
+                    {% for msg in app.session.flashBag.get('info') %}
+                        {{ msg }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+                <div class="alert alert-danger"></div>
+                <div class="form-group">
+                    <label>{{ form_label(formajout.titre,'Titre') }}</label>
+                    {{ form_widget(formajout.titre, {'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>{{ form_label(formajout.suffix,'Suffix') }}</label>
+                    {{ form_widget(formajout.suffix, {'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>{{ form_label(formajout.contenu,'Contenu') }}</label>
+                    {{ form_widget(formajout.contenu, {'attr':{'class':'tinymce'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>{{ form_label(formajout.meta,'Meta dynamique') }}</label>
+                    {{ form_widget(formajout.meta, {'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_rest(formajout) }}
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Formulaire</div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                {% if app.session.flashBag.has('info') %}
-                                    <div class="alert alert-success">
-                                        {% for msg in app.session.flashBag.get('info') %}
-                                            {{ msg }}
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                                <form method="post" action="{{ path('admin_admin_ajoutarticle') }}">
-                                    <div class="form-group">
-                                        <label>{{ form_label(formajout.titre,'Titre') }}</label>
-                                        {{ form_widget(formajout.titre, {'attr':{'class':'form-control'}}) }}
-                                    </div><div class="form-group">
-                                        <label>{{ form_label(formajout.auteur,'Auteur') }}</label>
-                                        {{ form_widget(formajout.auteur, {'attr':{'class':'form-control'}}) }}
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{ form_label(formajout.contenu,'Contenu') }}</label>
-                                        {{ form_widget(formajout.contenu, {'attr':{'class':'tinymce'}}) }}
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{ form_label(formajout.publication,'Publication') }}</label>
-                                        {{ form_widget(formajout.publication, {'attr':{'class':'form-control'}}) }}
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{ form_label(formajout.image.url,'Url Image') }}</label>
-                                        {{ form_widget(formajout.image.url, {'attr':{'class':'form-control'}}) }}
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{ form_label(formajout.categories,'Catégorie') }}</label>
-                                        {{ form_widget(formajout.categories, {'attr':{'class':'form-control myselect'}}) }}
-                                    </div>
-                                    {{ form_rest(formajout) }}
-                                    <button type="submit" class="btn btn-primary">Enregistrer</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.row-->
-
-
-            </div>
-        </div><!-- /.col-->
-    </div><!-- /.row -->
-{% endblock %}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary submitForm" >Save changes</button>
+        </div>
+    </div>
+        </div>
+</form>
+{{ tinymce_init({'theme': {'simple': {'menubar': false}}}) }}

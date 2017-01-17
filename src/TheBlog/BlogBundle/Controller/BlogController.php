@@ -29,7 +29,7 @@ class BlogController extends Controller
     }
     public function indexAction()
     {
-
+        dump($this->get('kernel')->getRootDir());
         $em             = $this->getDoctrine()->getManager();
 
         $tArticles      =  $em->getRepository('TheBlogBlogBundle:Article')->findAll();

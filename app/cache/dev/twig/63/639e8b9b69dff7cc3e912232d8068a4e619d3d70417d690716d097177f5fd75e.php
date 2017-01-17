@@ -15,8 +15,8 @@ class __TwigTemplate_52d610af49fe70aae7f6f316e617c8e24fc77fc17955dd3556de31a2f55
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_44887195f2e8b17271e589d3d86a514d6cfb2149cd5b82e3a0f48ae052b0549d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_44887195f2e8b17271e589d3d86a514d6cfb2149cd5b82e3a0f48ae052b0549d->enter($__internal_44887195f2e8b17271e589d3d86a514d6cfb2149cd5b82e3a0f48ae052b0549d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "StfalconTinymceBundle:Script:init.html.twig"));
+        $__internal_69be79003c8d0faaf8dcfa21f4f702dbf37120f585881d078c4b1bf634ec222b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_69be79003c8d0faaf8dcfa21f4f702dbf37120f585881d078c4b1bf634ec222b->enter($__internal_69be79003c8d0faaf8dcfa21f4f702dbf37120f585881d078c4b1bf634ec222b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "StfalconTinymceBundle:Script:init.html.twig"));
 
         // line 1
         if ((isset($context["include_jquery"]) ? $context["include_jquery"] : $this->getContext($context, "include_jquery"))) {
@@ -62,7 +62,7 @@ class __TwigTemplate_52d610af49fe70aae7f6f316e617c8e24fc77fc17955dd3556de31a2f55
 </script>
 ";
         
-        $__internal_44887195f2e8b17271e589d3d86a514d6cfb2149cd5b82e3a0f48ae052b0549d->leave($__internal_44887195f2e8b17271e589d3d86a514d6cfb2149cd5b82e3a0f48ae052b0549d_prof);
+        $__internal_69be79003c8d0faaf8dcfa21f4f702dbf37120f585881d078c4b1bf634ec222b->leave($__internal_69be79003c8d0faaf8dcfa21f4f702dbf37120f585881d078c4b1bf634ec222b_prof);
 
     }
 
