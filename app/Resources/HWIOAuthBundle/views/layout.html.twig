@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        {% block stylesheets %}
+            {% stylesheets
+            '@AdminAdminBundle/Resources/public/css/bootstrap.css'
+            '@AdminAdminBundle/Resources/public/css/font-awesome.css'
+            '@AdminAdminBundle/Resources/public/css/bootstrap-social.css'
+            '@AdminAdminBundle/Resources/public/css/bootstrap-theme.css'
+            '@AdminAdminBundle/Resources/public/css/bootstrap-table.css'
+            '@AdminAdminBundle/Resources/public/css/datepicker.css'
+            '@AdminAdminBundle/Resources/public/css/style.css'
+            '@AdminAdminBundle/Resources/public/js/select2/dist/css/select2.css'
+            filter='cssrewrite'
+            %}
+            <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="all">
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        <div>
+            {% block hwi_oauth_content %}
+            {% endblock hwi_oauth_content %}
+        </div>
+    </body>
+</html>
